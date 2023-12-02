@@ -2,31 +2,31 @@
 
 @include 'config.php';
 
-session_start();
+// session_start();
 
-$user_id = $_SESSION['user_id'];
+// $user_id = $_SESSION['user_id'];
 
-if(!isset($user_id)){
-   header('location:login.php');
-};
+// if(!isset($user_id)){
+//    header('location:login.php');
+// };
 
-if(isset($_GET['delete'])){
-    $delete_id = $_GET['delete'];
-    mysqli_query($conn, "DELETE FROM `cart` WHERE id = '$delete_id'") or die('query failed');
-    header('location:cart.php');
-}
+// if(isset($_GET['delete'])){
+//     $delete_id = $_GET['delete'];
+//     mysqli_query($conn, "DELETE FROM `cart` WHERE id = '$delete_id'") or die('query failed');
+//     header('location:cart.php');
+// }
 
-if(isset($_GET['delete_all'])){
-    mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
-    header('location:cart.php');
-};
+// if(isset($_GET['delete_all'])){
+//     mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
+//     header('location:cart.php');
+// };
 
-if(isset($_POST['update_quantity'])){
-    $cart_id = $_POST['cart_id'];
-    $cart_quantity = $_POST['cart_quantity'];
-    mysqli_query($conn, "UPDATE `cart` SET quantity = '$cart_quantity' WHERE id = '$cart_id'") or die('query failed');
-    $message[] = 'cart quantity updated!';
-}
+// if(isset($_POST['update_quantity'])){
+//     $cart_id = $_POST['cart_id'];
+//     $cart_quantity = $_POST['cart_quantity'];
+//     mysqli_query($conn, "UPDATE `cart` SET quantity = '$cart_quantity' WHERE id = '$cart_id'") or die('query failed');
+//     $message[] = 'cart quantity updated!';
+// }
 
 ?>
 
