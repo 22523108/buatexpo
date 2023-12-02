@@ -76,7 +76,7 @@ if(isset($_POST['add_to_cart'])){
 
 </head>
 <body>
-<div class="bodysearch">
+<div class="fullbody">
 <?php @include 'header.php'; ?>
 
 
