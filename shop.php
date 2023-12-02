@@ -79,7 +79,7 @@ if(isset($_POST['add_to_cart'])){
    
 <?php @include 'header.php'; ?>
 
-
+<div class="fullbody">
 <section class="products">
 
    <h1 class="title">destination</h1>
@@ -114,7 +114,7 @@ if(isset($_POST['add_to_cart'])){
 
 
 
-
+</div>
 
 <?php @include 'footer.php'; ?>
 
