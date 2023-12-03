@@ -2,7 +2,7 @@
 
 @include 'config.php';
 
-// session_start();
+session_start();
 
 // $user_id = $_SESSION['user_id'];
 
@@ -121,7 +121,42 @@ never fails to captivate the soul and inspire a profound sense of awe.</p><br>
    </div>
 
    <div class="more-btn">
-      <a href="shop.php" class="option-btn">load more</a>
+      <a href="destination.php" class="option-btn">load more</a>
+   </div>
+
+</section>
+
+<section class="products" id="event">
+
+   <h1 class="title">event</h1>
+
+   <div class="box-container">
+
+      <?php
+         $select_event = mysqli_query($conn, "SELECT * FROM `event` LIMIT 6") or die('query failed');
+         if(mysqli_num_rows($select_event) > 0){
+            while($fetch_event = mysqli_fetch_assoc($select_event)){
+      ?>
+      <form action="" method="POST" class="box">
+         <a href="view_page.php?pid=<?php echo $fetch_event['id']; ?>" class="">
+         <img src="uploaded_img/<?php echo $fetch_event['image']; ?>" alt="" class="uploadimage">
+         <div class="name"><?php echo $fetch_event['name']; ?></div>
+         <input type="hidden" name="event_id" value="<?php echo $fetch_event['id']; ?>">
+         <input type="hidden" name="event_name" value="<?php echo $fetch_event['name']; ?>">
+         <input type="hidden" name="event_image" value="<?php echo $fetch_event['image']; ?>">
+         </a>
+      </form>
+      <?php
+         }
+      }else{
+         echo '<p class="empty">no event added yet!</p>';
+      }
+      ?>
+
+   </div>
+
+   <div class="more-btn">
+      <a href="event.php" class="option-btn">load more</a>
    </div>
 
 </section>

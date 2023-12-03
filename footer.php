@@ -5,7 +5,8 @@
         <div class="box">
             <h3>quick links</h3>
             <a href="home.php">home</a>
-            <a href="shop.php">destination</a>
+            <a href="destination.php">destination</a>
+            <a href="event.php">event</a>
             <a href="login.php">login</a>
         </div>
 

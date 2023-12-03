@@ -2,7 +2,7 @@
 
 @include 'config.php';
 
-// session_start();
+session_start();
 
 // $user_id = $_SESSION['user_id'];
 
@@ -66,7 +66,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>shop</title>
+   <title>event | vacansheesh</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -82,28 +82,28 @@
 <div class="fullbody">
 <section class="products">
 
-   <h1 class="title">destination</h1>
+   <h1 class="title">event</h1>
 
    <div class="box-container">
 
       <?php
-         $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
-         if(mysqli_num_rows($select_products) > 0){
-            while($fetch_products = mysqli_fetch_assoc($select_products)){
+         $select_event = mysqli_query($conn, "SELECT * FROM `event`") or die('query failed');
+         if(mysqli_num_rows($select_event) > 0){
+            while($fetch_event = mysqli_fetch_assoc($select_event)){
       ?>
       <form action="" method="POST" class="box">
-         <a href="view_page.php?pid=<?php echo $fetch_products['id']; ?>" class="">
-         <img src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="" class="uploadimage">
-         <div class="name"><?php echo $fetch_products['name']; ?></div>
-         <input type="hidden" name="product_id" value="<?php echo $fetch_products['id']; ?>">
-         <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
-         <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
+         <a href="view_page.php?pid=<?php echo $fetch_event['id']; ?>" class="">
+         <img src="uploaded_img/<?php echo $fetch_event['image']; ?>" alt="" class="uploadimage">
+         <div class="name"><?php echo $fetch_event['name']; ?></div>
+         <input type="hidden" name="event_id" value="<?php echo $fetch_event['id']; ?>">
+         <input type="hidden" name="event_name" value="<?php echo $fetch_event['name']; ?>">
+         <input type="hidden" name="event_image" value="<?php echo $fetch_event['image']; ?>">
          </a>
       </form>
       <?php
          }
       }else{
-         echo '<p class="empty">no products added yet!</p>';
+         echo '<p class="empty">no event added yet!</p>';
       }
       ?>
 
